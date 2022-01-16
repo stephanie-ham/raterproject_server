@@ -1,5 +1,8 @@
 from django.db import models
 
+from raterprojectapi.models.game import Game
+from raterprojectapi.models.gamer import Gamer
+
 class Game_Rating(models.Model):
     game = models.ForeignKey(
         Game,
@@ -11,7 +14,6 @@ class Game_Rating(models.Model):
         on_delete=models.CASCADE,
         related_name='rater'
     )
-    rating = models.IntegerField(
-        min_value=0,
-        max_value=5
-    )
+    rating = models.IntegerField()
+    
+    # come back and make this a RatingField
